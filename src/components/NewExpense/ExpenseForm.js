@@ -7,8 +7,21 @@ function ExpenseForm() {
   const [enteredAmoumt, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
+  // one state approach example
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: ''
+  // })
+
   function titleChangeHandler(event) {
     setEnteredTitle(event.target.value);
+
+    // one state approach example
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // })
   }
 
   function amountChangeHandler(event) {
