@@ -4,7 +4,7 @@ import "./ExpenseForm.css";
 
 function ExpenseForm() {
   const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredAmoumt, setEnteredAmount] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
   // one state approach example
@@ -37,8 +37,20 @@ function ExpenseForm() {
     setEnteredDate(event.target.value);
   }
 
+  function submitHandler(event) {
+    // prevent default request being sent and causing the page to reload
+    event.preventDefault();
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
+    console.log(expenseData);
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
