@@ -22,6 +22,11 @@ function ExpenseForm() {
     //   ...userInput,
     //   enteredTitle: event.target.value,
     // })
+
+    // if your state update depends on the previous state, this approach should be used
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // })
   }
 
   function amountChangeHandler(event) {
